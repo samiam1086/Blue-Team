@@ -46,4 +46,4 @@ to
 
 ## Connections and Execution
 
-Once you have locked down your accounts you will want to keep an eye on who is connected via SSH. I have included a script titled limit-ssh.sh which will take an input of account names to allow access and will kill any connection or script run from another account.
+Once you have locked down your accounts you will want to keep an eye on who is connected via SSH. I have included a script titled limit-ssh.sh which will take an input of account names to allow access and will kill any connection or script run from another account. It is also a good idea to run the ```w``` command before you run it as many score tracking services may be running under specific accounts and you will need to ignore them by including them within the whitelist.
