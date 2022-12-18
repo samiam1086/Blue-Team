@@ -61,3 +61,15 @@ To check the running services on a Linux machine run ```sudo systemctl```
 This will bring up a large wall of text showing each service and if it is running or not. To continue to the next page of services press ```Enter``` and to exit press ```q``` 
 
 If there are any running services that are insecure or malicious you should stop them with ```sudo systemctl stop service_name```
+
+## Firewall
+
+You will want to check the firewall to ensure that it is enabled and does not have any rules that make it useless. To check this run ```sudo ufw status``` and for more detailed output run ```sudo ufw status verbose```
+
+## When Things Go Wrong
+
+Don't freak out things will break
+
+If your Linux machine gets compromised and you get booted and now you cannot connect with SSH try checking that SSH is still on the default port of 22 using nmap (They like to change it). If SSH is fully down try restarting the machine if the service has not been deleted it should come back up on its own otherwise I hope you have a recent backup and are good at restoring them. 
+
+If the service that the Linux machine is supposed to host is not giving you points check to see if it is up either via nmap or by using ```sudo systemctl status service_name``` and if it is stopped you may want to start it with ```sudo systemctl start service_name```
