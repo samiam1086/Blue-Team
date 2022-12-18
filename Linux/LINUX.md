@@ -27,6 +27,10 @@ While some will have others if the account has /bin/bash and is not an account t
 
 If the root account is set to /bin/bash or any other non disabled state you will want to promote another user to the administrator group via
 
+Accounts go from top to bottom in the order that they were created in so any user created accounts or non built-in system accounts will apeear at the bottom of ```/etc/passwd```
+
+![](/assets/Linux/nonsystemaccounts.png)
+
 ```usermod -aG wheel account```    for CentOS/RHEL
 or
 ```usermod -aG sudo account```    for Debian/Ubuntu
