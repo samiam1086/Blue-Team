@@ -49,3 +49,7 @@ to
 Once you have locked down your accounts you will want to keep an eye on who is connected via SSH. I have included a script titled limit-ssh.sh which will take an input of account names to allow access and will kill any connection or script run from another account. It is also a good idea to run the ```w``` command before you run it as many score tracking services may be running under specific accounts and you will need to ignore them by including them within the whitelist.
 
 It is also recommended to run ```sudo find / -name authorized_keys``` which will search for the authorized_keys file. authorized_keys is a file normally contained in a .ssh directory and contains SSH public keys that allow for someone to connect to a machine without a password. If you are note meant to be connecting with SSH keys and only passwords it is recommended to open these files (they are flat text files that can be reat with cat or nano) and if they contain keys that you are unsure as to the source of it is recommended to remove the keys and file.
+
+## Finding Interesting Items
+
+Once you have connected it is recommended to start by searching the ```/home/``` directory with an ```ls -a``` as this will show all files and folders contained within. Then begin entering each folder and run the same command to see if there is any obvious files that do not belong. 
