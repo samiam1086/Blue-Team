@@ -25,8 +25,8 @@ While some will have others if the account has /bin/bash and is not an account t
 
 If the root account is set to /bin/bash or any other non disabled state you will want to promote another user to the administrator group via
 
-```usermod -aG wheel admin```    for CentOS/RHEL
+```usermod -aG wheel account```    for CentOS/RHEL
 or
-```usermod -aG sudo admin```    for Debian/Ubuntu
+```usermod -aG sudo account```    for Debian/Ubuntu
 
 You will then want to verify that this worked by running ```sudo su```
