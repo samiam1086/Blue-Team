@@ -7,3 +7,5 @@ cat /etc/passwd
 ```
 
 You should get an output that resembles the images below.
+![](/assets/Linux/etcpasswd_output.png)
+![](/assets/Linux/etcpasswd_output1.png)
