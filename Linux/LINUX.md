@@ -72,4 +72,4 @@ Don't freak out things will break
 
 If your Linux machine gets compromised and you get booted and now you cannot connect with SSH try checking that SSH is still on the default port of 22 using nmap (They like to change it). If SSH is fully down try restarting the machine if the service has not been deleted it should come back up on its own otherwise I hope you have a recent backup and are good at restoring them. 
 
-If the service that the Linux machine is supposed to host is not giving you points check to see if it is up either via nmap or by using ```sudo systemctl status service_name``` and if it is stopped you may want to start it with ```sudo systemctl start service_name```
+If the service that the Linux machine is supposed to host is not giving you points check to see if it is up either via nmap or by using ```sudo systemctl status service_name``` and if it is stopped you may want to start it with ```sudo systemctl start service_name``` otherwise you may find yourself resetting up the service from scratch.
