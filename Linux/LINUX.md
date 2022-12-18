@@ -30,3 +30,10 @@ or
 ```usermod -aG sudo account```    for Debian/Ubuntu
 
 You will then want to verify that this worked by running ```sudo su```
+
+If you already have an account you do not need to do this but then you want to run ```sudo nano /etc/passwd```
+and modify 
+
+```root:x:0:0:root:/root:/bin/bash```
+to
+```root:x:0:0:root:/root:/sbin/nologin```
