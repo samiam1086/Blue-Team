@@ -53,3 +53,9 @@ It is also recommended to run ```sudo find / -name authorized_keys``` which will
 ## Finding Interesting Items
 
 Once you have connected it is recommended to start by searching the ```/home/``` directory with an ```ls -a``` as this will show all files and folders contained within. Then begin entering each folder and run the same command to see if there is any obvious files that do not belong. 
+
+## Check Running Services
+
+To check the running services on a Linux machine run ```sudo systemctl```
+
+This will bring up a large wall of text showing each service and if it is running or not. To continue to the next page of services press ```Enter``` and to exit press ```q``` 
