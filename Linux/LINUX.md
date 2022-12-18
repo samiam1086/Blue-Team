@@ -1,5 +1,7 @@
 # Linux
 
+## Accounts
+
 Step 1 of hardening Linux is to determine what accounts are present on the system to do this run:
 
 ```
@@ -37,3 +39,7 @@ and modify
 ```root:x:0:0:root:/root:/bin/bash```
 to
 ```root:x:0:0:root:/root:/sbin/nologin```
+
+## Connections and Execution
+
+Once you have locked down your accounts you will want to keep an eye on who is connected via SSH. I have included a script titled limit-ssh.sh which will take an input of account names to allow access and will kill any connection or script run from another account.
