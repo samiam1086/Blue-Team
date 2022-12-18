@@ -59,3 +59,5 @@ Once you have connected it is recommended to start by searching the ```/home/```
 To check the running services on a Linux machine run ```sudo systemctl```
 
 This will bring up a large wall of text showing each service and if it is running or not. To continue to the next page of services press ```Enter``` and to exit press ```q``` 
+
+If there are any running services that are insecure or malicious you should stop them with ```sudo systemctl stop service_name```
