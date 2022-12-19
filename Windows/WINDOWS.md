@@ -101,7 +101,7 @@ You should see
 
 ![](/assets/Windows/gpo.png)
 
-Then navigate to ```Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution``` and set it to enabled or in regedit navigate to ```HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient``` and create a key named ```EnableMulticast``` as a ```DWORD``` value and set it to ```0```
+Then navigate to ```Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution``` and set it to enabled or in regedit navigate to ```HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient``` and create a key named ```EnableMulticast``` as a ```REG_DWORD``` value and set it to ```0```
 
 ## Disable IPV6
 
@@ -113,3 +113,37 @@ If IPV6 addresses are not being leased out by DHCP disable it because it is a MI
 ## Remove Remote Registry
 
 Open CMD as an admin and run ```sc delete RemoteRegistry``` it is not necessary and is only an attack vector.
+
+## Lock Down LSASS
+
+Edit the registry key ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa``` and create a key names ```RunAsPPL``` as a ```REG_DWORD``` with the value of ```2```
+
+## Other Security Policies to Check
+
+Open ```Local Security Policy > Local Polocoes > Security Options```
+```
+Policy Name : Optimal setting
+
+Accounts: Administrator account status : Disabled
+Accounts: Guest account status : Disabled
+Accounts: Limit local account use of blank passwords to console logon only : Enabled
+Accounts: Rename administrator account : Anything other than Administrator
+Accounts: Rename guest account : Anything other than Guest
+Devices: Prevent users from installing printer drivers when connecting to shared printers : Enabled
+Domain member: Digitally encrypt or sign secure channel data (always) : Enabled
+Microsoft network client: Digitally sign communications (always) : Enabled
+Microsoft network client: Send unencrypted password to connect to third-party SMB servers : Disabled
+Microsoft network server: Digitally sign communications (always) : Enabled
+Network access: Do not allow anonymous enumeration of SAM accounts : Enabled
+Network access: Do not allow anonymous enumeration of SAM accounts and shares : Enabled
+Network access: Let Everyone permissions apply to anonymous users : Disabled
+Network access: Remotely accessible registry paths : Make it empty
+Network access: Remotely accessible registry paths and subpaths : make it empty
+Network access: Restrict anonymous access to Named Pipes and Shares : Enabled
+Network access: Restrict clients allowed to make remote calls to SAM : Click Edit Security and then change from Allow to Deny
+User Account Control: Use Admin Approval Mode for the built-in Administrator account : Enabled
+User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode : Prompt for conesent for non-windows binaries
+User Account Control: Behavior of the elevation prompt for standard users : Prompt for credentials
+User Account Control: Only elevate executable files that are signed and validated : Enabled is optimal if it does not break anything
+User Account Control: Turn on Admin Approval Mode : Enabled
+```
