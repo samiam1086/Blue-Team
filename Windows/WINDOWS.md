@@ -51,4 +51,9 @@ From here follow the same steps as above for hunting down accounts that do not b
 
 ## Firewall
 
-First things first on the firewall if it is not enabled ensure that there is an exception rule for however you are connecting to the machine (Likely port 3389) otherwise you will lose your connection to the machine and not be able to get it back
+First things first on the firewall if it is not enabled ensure that there is an exception rule for however you are connecting to the machine (Likely port 3389) otherwise you will lose your connection to the machine and not be able to get it back without some technical approaches.
+
+Once you have added your RDP exception enable the firewall and then select Advanced Settings.
+You should now see something like this
+
+![](/assets/Windows/firewall.png)
