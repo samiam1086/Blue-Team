@@ -34,6 +34,10 @@ Not Disabled (BAD)
 
 ![](/assets/Windows/notdisabled.png)
 
+To disable an account through Computer Management right click on the account select properties and you should see a properties box appear. From there select account is disabled.
+
+![](/assets/Windows/aid.png)
+
 Once you have checked all accounts you will need to look into the groups on the machine to see if there are any that are non-default or contain accounts that they should not.
 
 ![](/assets/Windows/allgroups.png)
@@ -41,3 +45,10 @@ Once you have checked all accounts you will need to look into the groups on the 
 Check these groups
 
 ![](/assets/Windows/checkthesegroups.png)
+
+If you are on Windows 10 Home open Control Panel > User Accounts > User Accounts > Manage Another Account
+From here follow the same steps as above for hunting down accounts that do not belong.
+
+## Firewall
+
+First things first on the firewall if it is not enabled ensure that there is an exception rule for however you are connecting to the machine (Likely port 3389) otherwise you will lose your connection to the machine and not be able to get it back
