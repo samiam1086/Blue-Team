@@ -147,3 +147,8 @@ User Account Control: Behavior of the elevation prompt for standard users : Prom
 User Account Control: Only elevate executable files that are signed and validated : Enabled is optimal if it does not break anything
 User Account Control: Turn on Admin Approval Mode : Enabled
 ```
+## Block things that help redteam
+
+Open ```Local Security Policy``` and right-click on ```Software Restriction Policies``` then click ```New Software Restriction Policys``` now navigate to ```Additional Rules``` now right click in the area and select ```New Path Rule```
+
+![](/assets/Windows/rc.png)
