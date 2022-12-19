@@ -103,3 +103,9 @@ You should see
 
 Then navigate to ```Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution``` and set it to enabled or in regedit navigate to ```HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient``` and create a key named ```EnableMulticast``` as a ```DWORD``` value and set it to ```0```
 
+## Disable IPV6
+
+if(ipv6 == notInUse):
+  disable(ipv6)
+  
+If IPV6 addresses are not being leased out by DHCP disable it because it is a MITM attack vector that you dont need.
