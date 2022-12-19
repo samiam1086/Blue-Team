@@ -9,3 +9,21 @@ If your machine is Windows Pro, Enterprise, or Server editions follow these step
 Step 1 open computer management
 
 ![](/assets/Windows/cm.png)
+
+Step 2 browse to Local Users and Groups
+
+![](/assets/Windows/luag.png)
+
+Step 3 open Users
+
+![](/assets/Windows/Users.png)
+
+Now you will be able to see all the local users of the machine. You should look for any users that are non-default and have no purpose existing and delete them. Next you should verify that ALL built in accounts are disabled
+
+Disabled (GOOD)
+
+![](/assets/Windows/disabled.png)
+
+Not Disabled (BAD)
+
+![](/assets/Windows/notdisabled.png)
