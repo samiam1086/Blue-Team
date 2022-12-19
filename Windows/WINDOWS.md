@@ -34,3 +34,10 @@ Not Disabled (BAD)
 
 ![](/assets/Windows/notdisabled.png)
 
+Once you have checked all accounts you will need to look into the groups on the machine to see if there are any that are non-default or contain accounts that they should not.
+
+![](/assets/Windows/allgroups.png)
+
+Check these groups
+
+![](/assets/Windows/checkthesegroups.png)
