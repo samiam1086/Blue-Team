@@ -22,6 +22,10 @@ Now you will be able to see all the local users of the machine. You should look 
 
 ![](/assets/Windows/allusers.png)
 
+Delete accounts like this
+
+![](/assets/Windows/susaccount.png)
+
 Disabled (GOOD)
 
 ![](/assets/Windows/disabled.png)
@@ -29,3 +33,4 @@ Disabled (GOOD)
 Not Disabled (BAD)
 
 ![](/assets/Windows/notdisabled.png)
+
