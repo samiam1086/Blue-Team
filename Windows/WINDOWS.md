@@ -20,6 +20,8 @@ Step 3 open Users
 
 Now you will be able to see all the local users of the machine. You should look for any users that are non-default and have no purpose existing and delete them. Next you should verify that ALL built in accounts are disabled
 
+![](/assets/Windows/allusers.png)
+
 Disabled (GOOD)
 
 ![](/assets/Windows/disabled.png)
