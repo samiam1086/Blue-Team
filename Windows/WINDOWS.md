@@ -87,3 +87,7 @@ Then navigate to Local Policies > Security Options and find ```Microsoft network
 
 Alternatively you can do this through the Windows registry by creating a key named RequireSecuritySignature  with a value of 1 under 
 ```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManWorkstation\Parameters``` and ```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters```
+
+You will also want to disable SMBv1 and to do this open Powershell as administrator and run 
+
+```Get-SmbServerConfiguration | Select EnableSMB1Protocol``` to see if it is enabled and then ```Set-SmbServerConfiguration -EnableSMB1Protocol $false``` to disable it. You will also want to run ```Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to see if the feature is installed and ```Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to remove the feature.
