@@ -176,6 +176,7 @@ C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\powershell_ise.exe
 ## Uninstall Windows Features
 
 Delete the Windows Store
+
 Open ```Turn Windows features on or off``` then Uninstall/Uncheck
 
 ```
