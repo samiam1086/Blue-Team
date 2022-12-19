@@ -109,3 +109,7 @@ if(ipv6 == notInUse):
   disable(ipv6)
   
 If IPV6 addresses are not being leased out by DHCP disable it because it is a MITM attack vector that you dont need.
+
+## Remove Remote Registry
+
+Open CMD as an admin and run ```sc delete RemoteRegistry``` it is not necessary and is only an attack vector.
