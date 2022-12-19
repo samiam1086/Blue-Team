@@ -152,3 +152,36 @@ User Account Control: Turn on Admin Approval Mode : Enabled
 Open ```Local Security Policy``` and right-click on ```Software Restriction Policies``` then click ```New Software Restriction Policys``` now navigate to ```Additional Rules``` now right click in the area and select ```New Path Rule```
 
 ![](/assets/Windows/rc.png)
+
+Now you should see
+
+![](/assets/Windows/dis.png)
+
+Ensure that Security level is set to disabled and press browse. Now find the executable you want to disable.
+Some good ones are 
+
+```
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe
+C:\Windows\System32\regsvr32.exe  Maybe not this one as I am unsure how much it is used by windows and other programs
+C:\Windows\SysWOW64\regsvr32.exe  Maybe not this one as I am unsure how much it is used by windows and other programs
+C:\Windows\SysWOW64\cmd.exe
+C:\Windows\System32\cmd.exe
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell_ise.exe
+C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\powershell.exe
+C:\WINDOWS\syswow64\WindowsPowerShell\v1.0\powershell_ise.exe
+```
+
+## Uninstall Windows Features
+
+Delete the Windows Store
+Open ```Turn Windows features on or off``` then Uninstall/Uncheck
+
+```
+Internet Explorer 11
+SMB 1.0/CIFS File Sharing Support
+Telnet Client
+TFTP Client
+Windows Powershell 2.0
+```
