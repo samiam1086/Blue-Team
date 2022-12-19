@@ -70,4 +70,20 @@ So for most RDP is a very useful service that enables remote management of a mac
 
 To do this we can modify the registry key
 
-```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` and modify ```PortNumber```
+```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` and modify ```PortNumber``` set the value to decimal and enter a number to connect over (YOU WILL NEED TO UPDATE THE RDP EXCEPTION IN THE FIREWALL TO INCLUDE THIS PORT).
+
+## Locking Down SMB
+
+You cannot always just disable SMB through the firewall due to it being a requirement for the server's service. To mitigate this we can do a few things.
+
+Number 1 Enforce SMB Signing 
+
+Open Local Security Policy
+You should be greeted by this window
+
+![](/assets/Windows/lsp.png)
+
+Then navigate to Local Policies > Security Options and find ```Microsoft network server: Digitally sign communications (always)``` and ```Microsoft network client: Digitally sign communications (always)``` and set them to Enabled
+
+Alternatively you can do this through the Windows registry by creating a key named RequireSecuritySignature  with a value of 1 under 
+```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManWorkstation\Parameters``` and ```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters```
