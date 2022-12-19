@@ -90,4 +90,16 @@ Alternatively you can do this through the Windows registry by creating a key nam
 
 You will also want to disable SMBv1 and to do this open Powershell as administrator and run 
 
-```Get-SmbServerConfiguration | Select EnableSMB1Protocol``` to see if it is enabled and then ```Set-SmbServerConfiguration -EnableSMB1Protocol $false``` to disable it. You will also want to run ```Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to see if the feature is installed and ```Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to remove the feature.
+```Get-SmbServerConfiguration | Select EnableSMB1Protocol``` to see if it is enabled and then ```Set-SmbServerConfiguration -EnableSMB1Protocol $false``` to disable it. You will also want to run ```Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to see if the feature is installed and ```Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol``` to remove the feature (This will prompt the machine to restart you should decline till later).
+
+## Lock Down LLMNR
+
+LLMNR stands for link locak multicast name resolution and it is generally used for networks that do not have DNS set up properly to allow computers to communicate, however it allows for an attacker to poison traffic to gain account NetNTLMv2 hashes so we want to disable it.
+
+Open Edit Group Policy
+You should see
+
+![](/assets/Windows/gpo.png)
+
+Then navigate to ```Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution``` and set it to enabled or in regedit navigate to ```HKEY_LOCAL_MACHINE\Software\policies\Microsoft\Windows NT\DNSClient``` and create a key named ```EnableMulticast``` as a ```DWORD``` value and set it to ```0```
+
