@@ -57,3 +57,17 @@ Once you have added your RDP exception enable the firewall and then select Advan
 You should now see something like this
 
 ![](/assets/Windows/firewall.png)
+
+Since Inbound rules are the most important we are going to focus on them first
+
+As you go through the firewall rules if you happen to notice any that simply allow a connection inbound over any port that is BAD and you will want to disable it.
+
+Next we will want to block RPC on port 135 SMB on port 445 and 139 (if it is not necessary for the servers function) SNMP on port 161 MSRPC on port 593 WINRM on port 5985 and 5986
+
+## Locking Down RDP
+
+So for most RDP is a very useful service that enables remote management of a machine, however it is often full of vulnerabilities. To mitigate this we can change the default RDP port to something that an attacker may not find such as 64423 or another extremely high port that would require an extra flag on the nmap scan.
+
+To do this we can modify the registry key
+
+```HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` and modify ```PortNumber```
