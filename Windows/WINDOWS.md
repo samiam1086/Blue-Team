@@ -186,3 +186,18 @@ Telnet Client
 TFTP Client
 Windows Powershell 2.0
 ```
+
+## Remove Present Malware
+
+Some machines may come with malware preinstalled.
+Good news is that this malware needs to be able to survive a restart making it much easier to find
+
+Use Autoruns released by Microsoft to determine what programs will start at bootup
+Use TCPView to see inbound and outbound connections
+
+Install an antivirus
+
+## Make Backups
+
+Backups of the critical files and know how to rebuild the service task in services.msc if it is removed (If they compromise your machine it will be)
+Backup the EC2 itself
