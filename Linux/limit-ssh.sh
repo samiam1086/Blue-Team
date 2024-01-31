@@ -13,7 +13,7 @@ uf=0 # userflag
 
 while true
 do
-    connected=$(w) # Push the output of w into a variable
+    connected=$(w) # Push the output of the w command into a variable
     #echo "$connected"
     #echo ""
     IN="$connected" 
@@ -31,7 +31,7 @@ do
                     uf=1 # if it is in whitelisted set userflag to 1
                 fi
             done
-            if [ $uf -eq 0 ] # if userflag is still 0 then whatever is in $item is not in $whitelisted and must due
+            if [ $uf -eq 0 ] # if userflag is still 0 then whatever is in $item is not in $whitelisted and must be terminated
             then
                 sudo killall -u $item 2>/dev/null && echo -e "WARNING: Non-Whitelisted account ${RED}$item${NC} connected and their connection was terminated" # self explanatory
                 #echo $item
