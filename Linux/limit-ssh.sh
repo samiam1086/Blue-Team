@@ -22,7 +22,7 @@ do
 
     for item in $data # run through everything in the $data array
     do
-        if [ $c1 -gt 10  ]
+        if [ $c1 -gt 10  ] # pretty sure this is just to allow a delay??
         then
             for user in $whitelisted # loop through whitelisted accounts array
             do
